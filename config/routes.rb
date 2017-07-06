@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
- root 'welcome#index'
+
+  resources :friendships
+  resources :users, only: [:index]
+
+ root 'friendships#index'
 end
