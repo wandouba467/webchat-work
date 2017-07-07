@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
 
 
-  resources :conversations do
+  resources :conversations, only: [:create] do
      resources :messages
    end
-   
+
  root 'friendships#index'
 end
